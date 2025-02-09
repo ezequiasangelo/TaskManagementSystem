@@ -96,6 +96,11 @@ body {
     margin-right: 10px;
 }
 
+.task .progress.done + .task-description {
+    text-decoration: line-through;
+    color: #e5f9ffa7;
+}
+
 .task .task-description {
     margin: auto;
     font-size: 12px;
@@ -113,16 +118,16 @@ body {
     font-size: 16px;
 }
 
-.action-button.button-edit{
+.action-button.edit-button{
     color: rgb(45, 104, 231);
 }
 
-.action-button.button-delete{
+.action-button.delete-button{
     color: rgb(255, 0, 0);
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 
