@@ -6,7 +6,7 @@ $sql = $pdo->query("SELECT * FROM task");
 
 if ($sql->rowCount() > 0) {
     $tasks = $sql->fetchALL(PDO::FETCH_ASSOC);
-    var_dump($tasks);
+    // var_dump($tasks);
 }
 ?><!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,7 @@ if ($sql->rowCount() > 0) {
 
         <h1>Anotações</h1>
 
-        <form action="" class="to-do-form">
+        <form action="actions/create.php" method="POST" class="to-do-form">
             <input type="text" name="description" placeholder="Comece a escrever..." required>
             <button type="submit" class="form-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-plus" viewBox="0 0 16 16">
