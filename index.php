@@ -50,8 +50,11 @@ if ($sql->rowCount() > 0) {
                     <input
                         type="checkbox" 
                         name="progress" 
-                        class="progress">
+                        class="progress <?= $task['completed'] ? 'done' : '' ?>"
+                        data-task-id="<?= $task['id']?>"
                         <?= $task['completed'] ? 'checked' : '' ?>
+                    >
+                        
                     
                     <p class="task-description">
                         <?= $task['description'] ?>
@@ -76,10 +79,11 @@ if ($sql->rowCount() > 0) {
                     <form action="actions/update.php" method="POST" class="to-do-form edit-task hidden">
                         <input type="text" class="hidden" name="id" value="<?= $task['id']?>">
                         <input
-                         type="text" 
-                         name="description" 
-                         placeholder="edit task" 
-                         value="<?= $task['description']?>">
+                            type="text" 
+                            name="description" 
+                            placeholder="edit task" 
+                            value="<?= $task['description']?>"
+                        >
 
                         <button type="submit" class="form-button confirm-button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
